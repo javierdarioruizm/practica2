@@ -118,3 +118,55 @@ function obtenerNombre(event) {
 
 
 }
+
+
+
+/////////// Borrar tareas del array y de la pantalla ///////////
+
+
+function borrarTarea(event) {
+
+    pintarAlerta('off');
+
+    // capturamos el id de la tarea que quiero borrar
+
+    let id = parseInt(event.target.id);
+
+    // Primero borramos la fila de la tarea que quiero borrar del HTML
+
+    let divRow = event.target.parentNode;
+    // el divRow es el elemento que quiero borrar y es el padre del divEliminar
+
+    divRow.parentNode.removeChild(divRow);
+    // aquí borramos la fila del HTML
+
+
+    // Ahora para borrar del array tengo que tener la posición del elemento. Para encontrarla utilizamos el identidicador id de cada elemento del array.
+
+    let posicion = listaTareas.findIndex(tarea => tarea.idTarea === id);
+
+    // usamos un splice para borrar el elemento del array
+    // el primer parametro es la posición desde la que quiero borrar y el segundo parámetro indica el número de elementos que quiero borrar
+
+    listaTareas.splice(posicion, 1);
+
+    // Ahora pintamos la fila de "No hay tareas pendientes" si el array de tareas está vacío o si la lista filtrada por tipo o nombre de tarea está vacía.
+
+    let prioridadBuscada = buscarPorPrioridad.value;
+
+    listaPorPrioridad = filtrarPorPrioridad(prioridadBuscada, listaTareas);
+
+    let tareaBuscada = introNombreTarea.value;
+
+    let listaPorNombre = filtrarPorNombre(tareaBuscada, listaTareas);
+
+
+    if (listaTareas.length == 0) {
+        pintarNoTareas();
+    } else if (prioridadBuscada != "" && listaPorPrioridad.length == 0) {
+        pintarNoTareas();
+    } else if (listaPorNombre.length == 0) {
+        pintarNoTareas();
+    }
+}
+
