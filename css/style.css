@@ -1,1 +1,181 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+
+
+:root {
+
+    --fuenteprincipal: 'Roboto', sans-serif;
+    --fontsize: 1em;
+  
+}
+
+*{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: var(--fuenteprincipal);
+    font-size: var(--fontsize);
+}
+
+.contenedor {
+    margin: 0 auto;
+    max-width: 700px;
+}
+
+header h1 {
+    text-align:center;
+    padding: 10px;
+    font-size: calc(var(--fontsize)*2);
+    font-weight: bold;
+    
+}
+
+header h2 {
+    text-align:center;
+    padding-bottom: 0px;
+    color: white;
+    font-size: calc(var(--fontsize)*1.5);
+}
+
+
+header .altatareas{
+    text-align:center;
+    margin-top: 20px;
+    padding: 20px;
+    background-color: lightseagreen;
+}
+
+header select, input, button {
+    height: 30px;
+}
+
+
+header .altatareas .inputbox{
+        margin: 10px 0;
+        display: inline-block;
+    }
+
+header .altatareas button{
+        padding: 4px;
+        border-radius: 4px;
+        font-size: calc(var(--fontsize)*0.9);
+        
+        
+    }
+
+header .altatareas p {
+    margin: 0 auto;
+    text-align: center;
+    padding: 3px;
+    width: 40%;
+    font-size: calc(var(--fontsize)*1);
+    
+}
+
+header .altatareas .aviso {
+    height: 25px;
+        
+}
+
+
+header .busqueda{
+    text-align:center;
+    padding: 20px;
+    background-color: #030444;
+}
+
+
+header .busqueda .searchbox{
+    margin: 10px 0;
+    display: inline-block;
+}
+
+header .busqueda .aviso {
+    height: 25px;
+        
+}
+
+header .busqueda p {
+    margin: 0 auto;
+    text-align: center;
+    padding: 3px;
+    width: 30%;
+    font-size: calc(var(--fontsize)*1);
+    
+}
+
+.row {
+    --bs-gutter-x: 0;
+    --bs-gutter-y: 0;
+    display: flex;
+    flex-wrap: wrap;
+    border: 1px;
+    border-style: none solid solid solid;
+    
+}
+
+
+section div .tarea {
+    font-weight: bold;
+    padding: 15px;
+    color: black;
+    
+      
+}
+
+section div .notarea {
+    font-weight: bold;
+    padding: 15px;
+    color: black;
+    background-color: lightgrey;
+      
+}
+
+section div .eliminar {
+    
+    color: white;
+    padding: 15px;
+    text-align: center;
+    background-color:rgb(192, 53, 11);
+    font-weight: bold;
+    transition-timing-function: ease;
+    transition: 1s;
+    
+}
+
+section div .eliminar:hover {
+     cursor: pointer;
+     background-color: rgb(58, 5, 5);   
+     
+}
+
+
+section div .urgente {
+  
+    background-color: tomato;
+}
+
+section div .diaria {
+    background-color: rgb(163, 218, 141);
+}
+
+section div .semanal {
+    background-color: rgb(71, 212, 255);
+}
+
+section div .mensual {
+    background-color: rgb(243, 255, 71);
+}
+
+.footer{
+    background-color: #030444;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    height: 50px;
+    margin-bottom: 150px;
+
+}
+
+
+
