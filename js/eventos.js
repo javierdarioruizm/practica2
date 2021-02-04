@@ -49,3 +49,39 @@ function obtenerTarea(event) {
     }
 
 }
+
+
+/////////// Mostrar tareas filtradas por prioridad ///////////
+
+
+let buscarPorPrioridad = document.querySelector('#buscarprioridad');
+
+// vamos a mostrar diferentes prioridades cuando cambiemos la opción del selector
+
+// Filtro por tipo de prioridad
+
+buscarPorPrioridad.addEventListener('change', obtenerPrioridad);
+
+function obtenerPrioridad(event) {
+
+    pintarAlerta('off');
+
+    let prioridad = event.target.value;
+
+    listaPorCategoria = filtrarPorPrioridad(prioridad, listaTareas);
+
+
+    if (prioridad != "" && listaPorCategoria.length != 0) {
+
+        pintarTareas(listaPorCategoria);
+
+    } else if (prioridad != "" && listaPorCategoria.length == 0) {
+
+        pintarNoTareas();
+
+    } else {
+
+        pintarTareas(listaTareas);
+    }
+
+}
