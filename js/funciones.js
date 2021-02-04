@@ -113,3 +113,29 @@ const pintarAlerta = function (alerta) {
     }
 
 }
+
+
+
+/////////// Función para guardar una tarea ///////////
+
+function guardarTarea(pTarea) {
+
+
+    let duplicada = listaTareas.some(tarea => {
+        return tarea.titulo === pTarea.titulo && tarea.prioridad === pTarea.prioridad;
+    })
+
+    if (!duplicada) {
+
+        listaTareas.push(pTarea);
+        pintarUnaTarea(pTarea);
+        pintarAlerta('tareacreada');
+        setTimeout(() => pintarAlerta('off'), 1500);
+
+    } else {
+
+        pintarAlerta('duplicada');
+        setTimeout(() => pintarAlerta('off'), 1500);
+    }
+
+}
