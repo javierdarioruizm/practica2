@@ -139,3 +139,14 @@ function guardarTarea(pTarea) {
     }
 
 }
+
+
+/////////// Función para filtrar tareas por prioridad ///////////
+
+function filtrarPorPrioridad(pPrioridad, pListaTareas) {
+
+    const listaFiltrada = pListaTareas.filter(tarea =>
+        tarea.prioridad == pPrioridad)
+
+    return listaFiltrada;
+}
