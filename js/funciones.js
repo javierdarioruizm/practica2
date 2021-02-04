@@ -65,3 +65,51 @@ const pintarNoTareas = function () {
     section.appendChild(divRow);
 
 }
+
+
+
+/////////// Función para pintar alertas ///////////
+
+const pintarAlerta = function (alerta) {
+
+    let p1 = document.querySelector('#alertas');
+    let p2 = document.querySelector('#nohaytarea');
+
+    switch (alerta) {
+
+        case 'campovacio':
+            p1.innerText = "Debes completar todos los campos";
+            p1.style.backgroundColor = "#d81333";
+            p1.style.color = "white";
+            break;
+
+        case 'duplicada':
+            p1.innerText = "Tarea duplicada";
+            p1.style.backgroundColor = "#d81333";
+            p1.style.color = "white";
+            break;
+
+        case 'tareacreada':
+            p1.innerText = "Tarea creada";
+            p1.style.backgroundColor = "#0a7913";
+            p1.style.color = "white";
+            break;
+
+        case 'notarea':
+            p2.innerText = "Tarea no existe";
+            p2.style.backgroundColor = "#d81333";
+            p2.style.color = "white";
+            break;
+
+        case 'off':
+            p1.innerText = "";
+            p1.style.backgroundColor = "lightseagreen";
+            p1.style.color = "lightseagreen";
+            p2.innerText = "";
+            p2.style.backgroundColor = "#030444";
+            p2.style.color = "#030444";
+            break;
+
+    }
+
+}
