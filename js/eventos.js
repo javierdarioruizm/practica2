@@ -85,3 +85,36 @@ function obtenerPrioridad(event) {
     }
 
 }
+
+
+
+/////////// Mostrar tareas filtradas por nombre ///////////
+
+
+// Capturamos el input
+
+let introNombreTarea = document.querySelector('#buscartarea');
+
+
+// Asignamos el evento al input
+
+introNombreTarea.addEventListener('input', obtenerNombre);
+
+function obtenerNombre(event) {
+
+    pintarAlerta('off');
+
+    let tareaBuscar = introNombreTarea.value;
+
+    let listaTareaBuscada = filtrarPorNombre(tareaBuscar, listaTareas);
+
+    if (listaTareaBuscada.length == 0) {
+        pintarNoTareas();
+        pintarAlerta('notarea');
+        setTimeout(() => pintarAlerta('off'), 1500);
+    } else {
+        pintarTareas(listaTareaBuscada);
+    }
+
+
+}
