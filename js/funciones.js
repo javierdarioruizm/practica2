@@ -45,3 +45,23 @@ const pintarTareas = function (pListaTareas) {
     pListaTareas.forEach(tarea => pintarUnaTarea(tarea));
 
 }
+
+
+/////////// Función para pintar no hay tareas pendientes ///////////
+
+const pintarNoTareas = function () {
+
+
+    section.innerHTML = "";
+    let divRow = document.createElement('div');
+    divRow.classList.add('row');
+
+    let divNoTarea = document.createElement('div');
+    divNoTarea.classList.add('notarea');
+    divNoTarea.classList.add('col-12');
+    divNoTarea.innerText = "No hay tareas pendientes";
+
+    divRow.appendChild(divNoTarea);
+    section.appendChild(divRow);
+
+}
