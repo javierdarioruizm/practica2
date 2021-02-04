@@ -34,3 +34,14 @@ const pintarUnaTarea = function (pTarea) {
     divEliminar.addEventListener('click', borrarTarea);
 
 }
+
+
+/////////// Función para pintar todas las tareas del array ///////////
+
+
+const pintarTareas = function (pListaTareas) {
+
+    section.innerHTML = ""; // vaciamos la lista de la sección tareas
+    pListaTareas.forEach(tarea => pintarUnaTarea(tarea));
+
+}
