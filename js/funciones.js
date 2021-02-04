@@ -150,3 +150,14 @@ function filtrarPorPrioridad(pPrioridad, pListaTareas) {
 
     return listaFiltrada;
 }
+
+
+/////////// Función para filtrar tareas por nombre ///////////
+
+function filtrarPorNombre(pTarea, pListaTareas) {
+
+    const listaFiltrada = pListaTareas.filter(tarea => tarea.titulo.toLowerCase().includes(pTarea.toLowerCase()));
+
+    return listaFiltrada;
+
+}
